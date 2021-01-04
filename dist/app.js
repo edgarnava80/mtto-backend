@@ -10,6 +10,7 @@ const vehicleRoutes_1 = __importDefault(require("./routes/vehicleRoutes"));
 const app = express_1.default();
 app.use(morgan_1.default("dev"));
 app.use(body_parser_1.default.json());
+app.use(express_1.default.static(`${__dirname}/public`));
 app.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Methods", "GET,PUT,POST,PATCH,DELETE");
