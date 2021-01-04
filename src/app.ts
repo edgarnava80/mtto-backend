@@ -1,12 +1,12 @@
 import express, { Application, Request, Response, NextFunction } from "express"
 import bodyParser from "body-parser"
-import morgan from "morgan"
+//import morgan from "morgan"
 
 import vehicleRouter from "./routes/vehicleRoutes"
 
 const app: Application = express()
 
-app.use(morgan("dev"))
+//app.use(morgan("dev"))
 app.use(bodyParser.json())
 app.use(express.static(`${__dirname}/public`))
 app.use((req: Request, res: Response, next: NextFunction) => {
