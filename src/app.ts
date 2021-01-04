@@ -8,6 +8,7 @@ const app: Application = express()
 
 app.use(morgan("dev"))
 app.use(bodyParser.json())
+app.use(express.static(`${__dirname}/public`))
 app.use((req: Request, res: Response, next: NextFunction) => {
   res.header("Access-Control-Allow-Origin", "*")
   res.header("Access-Control-Allow-Methods", "GET,PUT,POST,PATCH,DELETE")
